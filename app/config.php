@@ -4,6 +4,18 @@
 
 	$configs->env->add('development');
 
+	$configs->env->development->baseURI = '/sistema/';
+	
+	$configs->env->development->database->setConnectionData([
+			'driver' => 'mysql',
+			'host' => 'localhost',
+			'user' => 'root',
+			'password' => '',
+			'dbname' => 'projeto_site',
+			'charset' => 'utf8'
+		]);
+	
+
 	/*
 		//Globais
 		$configs->title = 'Titulo customizado';

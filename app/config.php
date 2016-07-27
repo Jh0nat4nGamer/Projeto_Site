@@ -7,12 +7,12 @@
 	$configs->env->development->baseURI = '/sistema/';
 	
 	$configs->env->development->database->setConnectionData(array(
-			'driver' => 'mysql',
 			'host' => 'localhost',
 			'user' => 'root',
 			'password' => '',
-			'dbname' => 'projeto_site',
-			'charset' => 'utf8'
+			'dbname' => 'projeto_site'
 	));
+
+	$configs->env->development->auth->setURLs('/sistema/home/', '/sistema/login/');
 
 	return $configs;

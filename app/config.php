@@ -15,6 +15,8 @@
 			'charset' => 'utf8'
 	]);
 
+	$configs->env->development->auth->setURLs('/sistema/home/', '/sistema/login/');
+
 	return $configs;
 	
 

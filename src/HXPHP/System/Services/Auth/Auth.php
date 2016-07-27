@@ -38,8 +38,8 @@ class Auth
 	public function __construct(
 		$after_login,
 		$after_logout,
-		$redirect = false,
-		$subfolder = 'default'
+		$redirect = false
+		
 	)
 	{
 		//Instância dos objetos injetados
@@ -47,18 +47,17 @@ class Auth
 		$this->response = new Http\Response;
 		$this->storage  = new Storage\Session\Session;
 
-		$subfolder = str_replace('/', '', $subfolder);
-		$subfolder = !$subfolder ? 'default' : $subfolder;
+		
 
-		if (!($after_login[$subfolder]) || !($after_logout[$subfolder]))
+		if (!($after_login) || !($after_logout))
 			throw new \Exception("Verifique as configuracoes de autenticacao para a subpasta: < $subfolder >", 1);
 
 		//Configuração
-		$this->url_redirect_after_login = $after_login[$subfolder];
-		$this->url_redirect_after_logout = $after_logout[$subfolder];
+		$this->url_redirect_after_login = $after_login;
+		$this->url_redirect_after_logout = $after_logout;
 		$this->redirect = $redirect;
 
-		$this->subfolder = $subfolder;
+	
 
 		return $this;
 	}

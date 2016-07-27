@@ -13,7 +13,9 @@
 			'password' => '',
 			'dbname' => 'projeto_site',
 			'charset' => 'utf8'
-		]);
+	]);
+
+	return $configs;
 	
 
 	/*
